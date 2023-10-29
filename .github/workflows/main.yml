@@ -1,0 +1,17 @@
+name: Website Health Check
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Website Health
+      uses: theritikchoure/websentry@v1.2.0
+      with:
+        website-url: 'https://yourwebsite.com'
+        max-retries: 3
+        retry-interval: 5
+        request-timeout: 10
