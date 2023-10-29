@@ -2,7 +2,7 @@ name: Website Health Check
 
 on:
   schedule:
-    - cron: '*/1 * * * *'  # Run every hour
+    - cron: '* * * * *'  # Run every hour
 
 jobs:
   health-check:
